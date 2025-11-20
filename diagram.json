@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Gustavo Balero",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -34.66, "left": -134.67, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -86.1,
+      "left": 33,
+      "attrs": { "temperature": "22.2", "humidity": "55.5" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:VIN", "red", [ "v-4.47", "h-73.03", "v-48.67", "h-124.67", "v179.33" ] ],
+    [ "esp:GND.1", "dht1:GND", "black", [ "h0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
